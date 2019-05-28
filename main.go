@@ -33,7 +33,8 @@ func main()  {
 }
 
 func assignRoutes(r *mux.Router)  {
-	r.HandleFunc("/api/user/{id}", controllers.RouteCtrlGetUserById)
+	r.HandleFunc("/api/user/{id}", controllers.UserControllerGetById)
+	r.HandleFunc("/api/users/page/{page}/items/{items}", controllers.UserControllerGetPagedList)
 }
 
 func startRestServer()  {
